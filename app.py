@@ -95,7 +95,3 @@ def correction():
         writer.writerow([text, predicted_label, true_label])
 
     return jsonify({'status': 'Correction received'})
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
