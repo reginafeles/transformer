@@ -30,7 +30,7 @@ def load_model(model_path="model/transformer_classifier.pt"):
     model.load_state_dict(checkpoint['model_state_dict'])
     model.eval()
 
-    return model, vocab, class_to_idx, idx_to_class, device
+    return model, vocab, class_to_idx, idx_to_class
 
 
 def tokenize(text):
