@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        resultBox.textContent = "⏳ Анализ...";
+        resultBox.textContent = "⏳ Analysis...";
         resultBox.className = "alert alert-info mt-4";
 
         try {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           const data = await response.json();
-          resultBox.textContent = `🏷 Класс: ${data.label}, уверенность: ${data.confidence}`;
+          resultBox.textContent = `🏷 Class: ${data.label}, assurance: ${data.confidence}`;
           resultBox.className = "alert alert-success mt-4";
 
           document.getElementById("feedback-section").classList.remove("d-none");
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             probsBars.appendChild(bar);
           }
         } catch (err) {
-          resultBox.textContent = "Ошибка при анализе текста";
+          resultBox.textContent = "Error";
           resultBox.className = "alert alert-danger mt-4";
         }
       });
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("btn-correct").addEventListener("click", async () => {
         await sendFeedback(true);
         document.getElementById("feedback-section").classList.add("d-none");
-        resultBox.textContent += "<\br>✅ Спасибо за подтверждение!";
+        resultBox.innerHTML += "<br>Thanks for the confirmation!";
       });
 
       document.getElementById("btn-incorrect").addEventListener("click", () => {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const predictedLabel = resultBox.textContent.split(":")[1].split(",")[0].trim();
 
         if (!correctLabel) {
-          alert("Выберите правильный класс");
+          alert("Choose the right class");
           return;
         }
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text, predicted_label: predictedLabel, true_label: correctLabel })
         }).then(() => {
-          alert("Спасибо, исправление отправлено");
+          alert("Thank you, the correction has been sent");
           document.getElementById("correction-form").classList.add("d-none");
         });
       });
