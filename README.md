@@ -1,10 +1,10 @@
-# Transformer Text Classifier API
+# Transformer Text Classifier API #
 
 A Flask app for text classification using a custom Transformer model trained on PyTorch.
 [![HF Space](https://img.shields.io/badge/HuggingFace-transformer2.0-orange?logo=HuggingFace&style=flat)](https://huggingface.co/spaces/reginafeles/transformer2.0)
 ---
 
-## Project Structure
+## Project Structure ##
 ```
 ├── model/
   └── load.py # Model loading, tokenization and encoding
@@ -16,16 +16,16 @@ A Flask app for text classification using a custom Transformer model trained on 
 ├── app.py # FLask-app
 ├── README.md # Doc
 ```
-##Architecture
+## Architecture ##
 
 * Embedding
 * TransformerEncoder(2 layers, 4 heads)
 * Linear-classifier
 
-##UI
+## UI ##
 ![User Interface](static/user_interface.png)
 
-##Run code locally
+## Run code locally ##
 ```
 python app.py
 ```
