@@ -7,7 +7,7 @@ A Flask app for text classification using a custom Transformer model trained on 
 ## Project Structure ##
 ```
 ├── model/
-  └── load.py # Model loading, tokenization and encoding
+│ └── load.py # Model loading, tokenization and encoding
 │ └── transformer_classifier.pt # Model
 ├── static/
 │ └── script.js # Interactions with the Flask API
